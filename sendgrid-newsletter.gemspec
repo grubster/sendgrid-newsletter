@@ -14,4 +14,5 @@ Gem::Specification.new do |gem|
   gem.name          = "sendgrid-newsletter"
   gem.require_paths = ["lib"]
   gem.version       = Sendgrid::Newsletter::VERSION
+  gem.add_development_dependency 'minitest', '~> 2.11.3'
 end
