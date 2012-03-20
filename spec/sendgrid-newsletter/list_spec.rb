@@ -15,10 +15,45 @@ describe Sendgrid::Newsletter::List do
       }.must_raise ArgumentError
     end
 
+    it 'should raise APIError when error is received' do
+      VCR.use_cassette('list_exist') do
+        lambda {
+          subject.add(list: 'Cool List')
+        }.must_raise Sendgrid::Newsletter::APIError
+      end
+    end
+
     it 'should return message: "success" on successful creation' do
       VCR.use_cassette('create_list_successfully') do
         subject.add(list: 'Cool List').must_equal({'message' => 'success'})
       end
     end
+  end
+
+  describe '.del' do
+    before do
+      Sendgrid::Newsletter::Config.api_user = 'grubster_news_test'
+      Sendgrid::Newsletter::Config.api_key = 'grugrutestnewsletter'
+    end
+    it 'should require :list param' do
+      lambda {
+        subject.delete
+      }.must_raise ArgumentError
+    end
+
+    it 'should raise APIError when error is received' do
+      VCR.use_cassette('list_non_exist_on_deletion') do
+        lambda {
+          subject.delete(list: 'Cool List')
+        }.must_raise Sendgrid::Newsletter::APIError
+      end
+    end
+
+    it 'should return message: "success" on successful deletion' do
+      VCR.use_cassette('delete_list_successfully') do
+        subject.delete(list: 'Cool List').must_equal({'message' => 'success'})
+      end
+    end
+
   end
 end

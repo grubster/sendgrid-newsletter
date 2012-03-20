@@ -1,0 +1,30 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/api/newsletter/lists/delete.json?api_key=grugrutestnewsletter&api_user=grubster_news_test
+    body:
+      encoding: US-ASCII
+      string: list=Cool%20List
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/0.7.65
+      Date:
+      - Tue, 20 Mar 2012 22:25:09 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"message": "success"}'
+    http_version: !!null 
+  recorded_at: Tue, 20 Mar 2012 22:25:09 GMT
+recorded_with: VCR 2.0.0
