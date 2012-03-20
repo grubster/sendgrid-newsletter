@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://sendgrid.com/api/newsletter/list.json?api_key=testnewsletter&api_user=news_test
+    method: post
+    uri: https://sendgrid.com/api/newsletter/add.json?api_key=testnewsletter&api_user=news_test
     body:
       encoding: US-ASCII
-      string: ''
+      string: text=Text&html=Text&name=Beatiful%20news&identity=Beatiful%20Girl&subject=Text
     headers: {}
   response:
     status:
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/0.7.65
       Date:
-      - Tue, 20 Mar 2012 19:53:45 GMT
+      - Tue, 20 Mar 2012 21:05:00 GMT
       Content-Type:
       - text/html
       Transfer-Encoding:
@@ -24,7 +24,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '[{"name": "Teste"},{"name": "Teste API"}]'
+      string: ! '{"message": "success"}'
     http_version: !!null
-  recorded_at: Tue, 20 Mar 2012 19:53:45 GMT
+  recorded_at: Tue, 20 Mar 2012 21:05:00 GMT
 recorded_with: VCR 2.0.0

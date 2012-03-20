@@ -1,4 +1,5 @@
 require File.expand_path("../sendgrid-newsletter/version", __FILE__)
+require File.expand_path("../sendgrid-newsletter/errors", __FILE__)
 
 require 'httparty'
 
