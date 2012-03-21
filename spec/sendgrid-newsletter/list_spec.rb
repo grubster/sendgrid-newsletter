@@ -1,5 +1,4 @@
 require 'spec_helper'
-require File.expand_path('../../../lib/sendgrid-newsletter', __FILE__)
 
 describe Sendgrid::Newsletter::List do
   before do
@@ -12,20 +11,20 @@ describe Sendgrid::Newsletter::List do
     it 'should require :list param' do
       lambda {
         subject.add
-      }.must_raise ArgumentError
+      }.should raise_error ArgumentError
     end
 
     it 'should raise APIError when error is received' do
       VCR.use_cassette('list_exist') do
         lambda {
           subject.add(list: 'Cool List')
-        }.must_raise Sendgrid::Newsletter::APIError
+        }.should raise_error Sendgrid::Newsletter::APIError
       end
     end
 
     it 'should return message: "success" on successful creation' do
       VCR.use_cassette('create_list_successfully') do
-        subject.add(list: 'Cool List').must_equal({'message' => 'success'})
+        subject.add(list: 'Cool List').should eql({'message' => 'success'})
       end
     end
   end
@@ -38,20 +37,20 @@ describe Sendgrid::Newsletter::List do
     it 'should require :list param' do
       lambda {
         subject.delete
-      }.must_raise ArgumentError
+      }.should raise_error ArgumentError
     end
 
     it 'should raise APIError when error is received' do
       VCR.use_cassette('list_non_exist_on_deletion') do
         lambda {
           subject.delete(list: 'Cool List')
-        }.must_raise Sendgrid::Newsletter::APIError
+        }.should raise_error Sendgrid::Newsletter::APIError
       end
     end
 
     it 'should return message: "success" on successful deletion' do
       VCR.use_cassette('delete_list_successfully') do
-        subject.delete(list: 'Cool List').must_equal({'message' => 'success'})
+        subject.delete(list: 'Cool List').should eql({'message' => 'success'})
       end
     end
 

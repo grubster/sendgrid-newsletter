@@ -5,5 +5,6 @@ gemspec
 
 group :development do
   gem 'guard'
-  gem 'guard-minitest'
+  gem 'guard-rspec'
+  gem 'simplecov', require: false
 end

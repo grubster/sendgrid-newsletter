@@ -1,3 +1,4 @@
+require File.expand_path("../../sendgrid-newsletter", __FILE__)
 module Sendgrid
   module Newsletter
     class Newsletter < Base
