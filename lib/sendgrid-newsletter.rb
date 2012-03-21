@@ -9,5 +9,6 @@ module Sendgrid
     autoload :Base, File.expand_path('../sendgrid-newsletter/base', __FILE__)
     autoload :Newsletter, File.expand_path('../sendgrid-newsletter/newsletter', __FILE__)
     autoload :List, File.expand_path('../sendgrid-newsletter/list', __FILE__)
+    autoload :Email, File.expand_path('../sendgrid-newsletter/email', __FILE__)
   end
 end
