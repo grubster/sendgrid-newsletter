@@ -2,20 +2,20 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sendgrid.com/api/newsletter/lists/delete.json?api_key=grugrutestnewsletter&api_user=grubster_news_test
+    uri: https://sendgrid.com/api/newsletter/recipients/delete.json?api_key=grugrutestnewsletter&api_user=grubster_news_test
     body:
       encoding: US-ASCII
-      string: list=Cool%20List
+      string: name=Bad%20News&list=bad_list
     headers: {}
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
       Server:
       - nginx/0.7.65
       Date:
-      - Thu, 22 Mar 2012 02:01:34 GMT
+      - Thu, 22 Mar 2012 02:01:36 GMT
       Content-Type:
       - text/html
       Transfer-Encoding:
@@ -24,7 +24,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"message": "success"}'
+      string: ! '{"error": "Bad News does not exist"}'
     http_version: !!null 
-  recorded_at: Thu, 22 Mar 2012 02:01:34 GMT
+  recorded_at: Thu, 22 Mar 2012 02:01:36 GMT
 recorded_with: VCR 2.0.0
