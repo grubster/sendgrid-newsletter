@@ -11,5 +11,6 @@ module Sendgrid
     autoload :List, File.expand_path('../sendgrid-newsletter/list', __FILE__)
     autoload :Email, File.expand_path('../sendgrid-newsletter/email', __FILE__)
     autoload :Recipient, File.expand_path('../sendgrid-newsletter/recipient', __FILE__)
+    autoload :Schedule, File.expand_path('../sendgrid-newsletter/schedule', __FILE__)
   end
 end
