@@ -44,6 +44,14 @@ describe Sendgrid::Newsletter::Email do
         }.should raise_error Sendgrid::Newsletter::APIError
       end
     end
+
+    it "should treat adding more than 1000 emails" do
+      VCR.use_cassette('adding_bulk_emails_on_list') do
+        data = (1..1500).to_a.map { |i| { name: "foo bar #{i}", email: "foo#{i}@bar.com" } }
+        subject.add(list: 'cool_list', data: data).should eql({'inserted' => 1499})
+      end
+
+    end
   end
 end
 
