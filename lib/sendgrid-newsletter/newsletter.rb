@@ -3,8 +3,8 @@ module Sendgrid
   module Newsletter
     class Newsletter < Base
 
-      def list
-        self.class.get '/list.json'
+      def list(options={})
+        self.class.get '/list.json', :query => options
       end
 
       def add(options={})

@@ -1,0 +1,30 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sendgrid.com/api/newsletter/list.json?api_key=grugrutestnewsletter&api_user=grubster_news_test&name=Cool%20News
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/0.7.65
+      Date:
+      - Fri, 30 Mar 2012 18:19:10 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '[{"name": "Cool News"}]'
+    http_version: !!null 
+  recorded_at: Fri, 30 Mar 2012 18:19:10 GMT
+recorded_with: VCR 2.0.0
