@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/api/newsletter/lists/email/add.json?api_key=testnewsletter&api_user=news_test
+    body:
+      encoding: US-ASCII
+      string: list=cool_list&data[]={"name":"foo bar","email":"foo@bar.com","address":"1
+        Street, 0"}&data[]={"name":"foo2 bar","email":"foo2@bar.com","address":"1
+        Street, 2"}
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/0.7.65
+      Date:
+      - Sat, 31 Mar 2012 13:25:02 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"inserted": 2}'
+    http_version: !!null
+  recorded_at: Sat, 31 Mar 2012 13:25:02 GMT
+recorded_with: VCR 2.0.0

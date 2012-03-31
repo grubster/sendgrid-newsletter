@@ -16,6 +16,14 @@ module Sendgrid
         response
       end
 
+      def edit(options={})
+        check_required_params options, [:text, :html, :name, :newname, :identity, :subject]
+
+        response = self.class.post '/edit.json', body: options
+        raise APIError.new(response['error']) if response['error']
+
+        response
+      end
     end
   end
 end
