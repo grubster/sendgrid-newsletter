@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Nelson Haraguchi"]
   gem.email         = ["nelsonmhjr@gmail.com"]
   gem.description   = %q{Sendgrid Newsletter API in Ruby}
-  gem.summary       = %q{Send a Newsletter with Sendgrid}
+  gem.summary       = %q{Send a Newsletter with Sendgrid API (Alpha), just some methods implemented. Use gatling_gun or newslettre instead}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
