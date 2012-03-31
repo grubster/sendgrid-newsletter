@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/api/newsletter/list.json?api_key=grugrutestnewsletter&api_user=grubster_news_test&name=Cool%20News
+    uri: https://sendgrid.com/api/newsletter/list.json?api_key=testnewsletter&api_user=news_test&name=Cool%20News
     body:
       encoding: US-ASCII
       string: ''
@@ -25,6 +25,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '[{"name": "Cool News"}]'
-    http_version: !!null 
+    http_version: !!null
   recorded_at: Fri, 30 Mar 2012 18:19:10 GMT
 recorded_with: VCR 2.0.0

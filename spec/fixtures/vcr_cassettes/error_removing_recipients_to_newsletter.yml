@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sendgrid.com/api/newsletter/recipients/delete.json?api_key=grugrutestnewsletter&api_user=grubster_news_test
+    uri: https://sendgrid.com/api/newsletter/recipients/delete.json?api_key=testnewsletter&api_user=news_test
     body:
       encoding: US-ASCII
       string: name=Bad%20News&list=bad_list
@@ -25,6 +25,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"error": "Bad News does not exist"}'
-    http_version: !!null 
+    http_version: !!null
   recorded_at: Thu, 22 Mar 2012 02:01:36 GMT
 recorded_with: VCR 2.0.0

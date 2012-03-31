@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Sendgrid::Newsletter::Recipient do
   before do
-    Sendgrid::Newsletter::Config.api_user = 'grubster_news_test'
-    Sendgrid::Newsletter::Config.api_key = 'grugrutestnewsletter'
+    Sendgrid::Newsletter::Config.api_user = 'news_test'
+    Sendgrid::Newsletter::Config.api_key = 'testnewsletter'
   end
   subject { Sendgrid::Newsletter::Recipient.new }
   describe '#add' do

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sendgrid.com/api/newsletter/edit.json?api_key=grugrutestnewsletter&api_user=grubster_news_test
+    uri: https://sendgrid.com/api/newsletter/edit.json?api_key=testnewsletter&api_user=news_test
     body:
       encoding: US-ASCII
       string: text=Text&html=Text&name=Beatiful%20news&newname=Beatiful%20news&identity=Beatiful%20Girl&subject=Text
@@ -25,6 +25,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"error": "Beatiful news does not exist"}'
-    http_version: !!null 
+    http_version: !!null
   recorded_at: Sat, 31 Mar 2012 14:10:21 GMT
 recorded_with: VCR 2.0.0

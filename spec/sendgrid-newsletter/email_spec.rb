@@ -39,7 +39,7 @@ describe Sendgrid::Newsletter::Email do
 
     it 'should send multiple data parameters' do
       VCR.use_cassette('adding_emails_with_data_on_list') do
-        subject.add(list: 'cool_list', data: [{name: 'foo bar', email: 'foo@bar.com', address:'1 Street, 0'}, {name: 'foo2 bar', email: 'foo2@bar.com', address:'1 Street, 2'}]).should eql({'inserted' => 2})
+        subject.add(list: 'cool_list', data: [{name: 'foo bar', email: 'foo@bar.com', address:'2 Street, 0'}, {name: 'foo2 bar', email: 'foo2@bar.com', address:'1 Street, 2'}]).should eql({'inserted' => 2})
       end
     end
 

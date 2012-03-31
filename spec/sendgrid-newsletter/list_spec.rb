@@ -30,10 +30,6 @@ describe Sendgrid::Newsletter::List do
   end
 
   describe '.del' do
-    before do
-      Sendgrid::Newsletter::Config.api_user = 'grubster_news_test'
-      Sendgrid::Newsletter::Config.api_key = 'grugrutestnewsletter'
-    end
     it 'should require :list param' do
       lambda {
         subject.delete

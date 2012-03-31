@@ -22,8 +22,6 @@ describe Sendgrid::Newsletter::Newsletter do
     end
 
     it 'should check if a list exist within all newsletters' do
-    Sendgrid::Newsletter::Config.api_user='grubster_news_test'
-    Sendgrid::Newsletter::Config.api_key='grugrutestnewsletter'
       VCR.use_cassette('existent_check_newsletter') do
         subject.list(:name => 'Cool News').should eql [{'name' => 'Cool News'}]
       end
@@ -71,10 +69,6 @@ describe Sendgrid::Newsletter::Newsletter do
   end
 
   describe '.edit' do
-    before do
-      Sendgrid::Newsletter::Config.api_user = 'grubster_news_test'
-      Sendgrid::Newsletter::Config.api_key = 'grugrutestnewsletter'
-    end
     it 'should require text' do
       lambda {
         subject.edit
